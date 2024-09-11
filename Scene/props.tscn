@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://bp47oyw1y1ggv"]
+
+[ext_resource type="PackedScene" uid="uid://dj846yoo0p0h" path="res://mesh/boite.glb" id="1_j2cui"]
+[ext_resource type="PackedScene" uid="uid://bleh6ffhfg83b" path="res://mesh/canapé.glb" id="2_8uwd5"]
+[ext_resource type="PackedScene" uid="uid://dphwakniqbfh1" path="res://mesh/Chaise.glb" id="3_ftgdi"]
+[ext_resource type="PackedScene" uid="uid://dilxqusaty5gm" path="res://mesh/Chevalet.glb" id="4_drcpj"]
+[ext_resource type="PackedScene" uid="uid://cp2cnee2poacw" path="res://mesh/table basse.glb" id="5_4iy00"]
+[ext_resource type="PackedScene" uid="uid://drcwr8eqn3xar" path="res://mesh/Table.glb" id="6_wkovr"]
+[ext_resource type="PackedScene" uid="uid://b7j0www253das" path="res://mesh/Tabouret.glb" id="7_ohfho"]
+[ext_resource type="PackedScene" uid="uid://dhyb0ttxxwjh" path="res://mesh/étagère.glb" id="8_ctfv8"]
+
+[node name="props" type="Node3D"]
+
+[node name="boite" parent="." instance=ExtResource("1_j2cui")]
+transform = Transform3D(-0.976183, 0, -0.216951, 0, 1, 0, 0.216951, 0, -0.976183, 5.29304, -0.00397277, -0.187429)
+
+[node name="canapé" parent="." instance=ExtResource("2_8uwd5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15076, -1.19209e-07, -0.633693)
+
+[node name="Chaise" parent="." instance=ExtResource("3_ftgdi")]
+transform = Transform3D(-0.299024, 0, -0.954246, 0, 1, 0, 0.954246, 0, -0.299024, 1.49971, 0, -0.8016)
+
+[node name="Chevalet" parent="." instance=ExtResource("4_drcpj")]
+transform = Transform3D(-0.853032, 0, -0.521859, 0, 1, 0, 0.521859, 0, -0.853032, 3.99247, 0, -1.3647)
+
+[node name="table basse" parent="." instance=ExtResource("5_4iy00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0655634, 0, -1.88232)
+
+[node name="Table" parent="." instance=ExtResource("6_wkovr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20695, 0, -0.396703)
+
+[node name="Tabouret" parent="." instance=ExtResource("7_ohfho")]
+transform = Transform3D(0.890014, 0, -0.455933, 0, 1, 0, 0.455933, 0, 0.890014, 3.54431, -0.0307167, -1.97559)
+
+[node name="étagère" parent="." instance=ExtResource("8_ctfv8")]
+transform = Transform3D(-0.00157084, 0, -0.999999, 0, 1, 0, 0.999999, 0, -0.00157084, 4.46172, -1.19209e-07, 0.490193)
+
+[node name="Chaise2" parent="." instance=ExtResource("3_ftgdi")]
+transform = Transform3D(0.223709, 0, 0.974656, 0, 1, 0, -0.974656, 0, 0.223709, 2.89915, 0, -0.207464)
+
+[node name="Chevalet2" parent="." instance=ExtResource("4_drcpj")]
+transform = Transform3D(-0.395449, 0, 0.918488, 0, 1, 0, -0.918488, 0, -0.395449, 0.0460658, 0, 0.812138)
