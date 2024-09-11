@@ -26,6 +26,7 @@ script = ExtResource("1_7iqck")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.71, 0)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("SphereMesh_sepye")
@@ -36,7 +37,6 @@ shape = SubResource("ConvexPolygonShape3D_swrn3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-visible = false
 shadow_enabled = true
 
 [node name="sol" type="MeshInstance3D" parent="."]
@@ -48,13 +48,45 @@ environment = SubResource("Environment_oks02")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365, 4.1, 18.81)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.00436333, 0.99999, 0, -0.99999, -0.00436333, 0, 7.05981, 0)
-light_color = Color(5.29438e-07, 0.648259, 0.512189, 1)
-light_energy = 16.0
-light_indirect_energy = 7.685
-spot_range = 9.725
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 258.0
+grow_vertical = 2
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_right = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button3" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = -324.0
+offset_bottom = 324.0
+grow_horizontal = 0
+grow_vertical = 2
 
 [connection signal="input_event" from="StaticBody3D" to="." method="_on_static_body_3d_input_event"]
