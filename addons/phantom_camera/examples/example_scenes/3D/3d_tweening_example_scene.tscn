@@ -148,6 +148,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.97)
 [node name="Linear" type="Node3D" parent="Tweening Example"]
 
 [node name="EntryRoomTrigger" type="Area3D" parent="Tweening Example/Linear" node_paths=PackedStringArray("area_pcam")]
+transform = Transform3D(0.999997, 0.00217835, -0.00135425, -0.00217674, 0.999997, 0.00119107, 0.00135684, -0.00118813, 0.999998, 0, 0, 0)
 priority = 5
 script = ExtResource("5_h0ouh")
 area_pcam = NodePath("../PhantomCamera3D")

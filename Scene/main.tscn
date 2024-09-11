@@ -22,8 +22,63 @@ background_mode = 2
 background_energy_multiplier = 0.53
 sky = SubResource("Sky_1vgkg")
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="Resource" id="Resource_j03yb"]
+script = ExtResource("3_xpwj2")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Resource" id="Resource_bw54x"]
+script = ExtResource("4_sylw6")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dm7lx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tccpn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ygguv"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_klf7a"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pg0wa"]
+points = PackedVector3Array(0.5, 0.5, 0, 0.5, -0.5, 0, -0.5, 0.5, 0, -0.5, -0.5, 0)
+
+[sub_resource type="SphereMesh" id="SphereMesh_t5yij"]
+
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("choose_region", "return_region", "camera_wall_1", "camera_wall_2", "camera_wall_3")]
 script = ExtResource("1_7iqck")
+choose_region = NodePath("CanvasLayer/choose_region")
+return_region = NodePath("CanvasLayer/return_region")
+camera_wall_1 = NodePath("camera_wall_1")
+camera_wall_2 = NodePath("camera_wall_2")
+camera_wall_3 = NodePath("camera_wall_3")
+
+[node name="camera_wall_3" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.365, 4.1, 2.06694)
+visible = false
+script = ExtResource("2_1ryyr")
+tween_resource = SubResource("Resource_afviv")
+camera_3d_resource = SubResource("Resource_rnmvc")
+
+[node name="camera_wall_2" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.17594, 4.1, 0)
+script = ExtResource("2_1ryyr")
+tween_resource = SubResource("Resource_afviv")
+camera_3d_resource = SubResource("Resource_rnmvc")
+
+[node name="camera_wall_1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365, 4.1, -5.76066)
+script = ExtResource("2_1ryyr")
+tween_resource = SubResource("Resource_afviv")
+camera_3d_resource = SubResource("Resource_rnmvc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.71, 0)
@@ -31,7 +86,7 @@ visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("SphereMesh_sepye")
-skeleton = NodePath("../../Camera3D")
+skeleton = NodePath("../../maincamera")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_swrn3")
@@ -46,12 +101,23 @@ mesh = SubResource("PlaneMesh_vk6fa")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_oks02")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365, 4.1, 18.81)
+[node name="maincamera" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.305, 2.545, 0)
+
+[node name="PhantomCameraHost" type="Node" parent="maincamera"]
+script = ExtResource("5_kb1ik")
+
+[node name="original_ph_cam" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.305, 2.545, 0)
+script = ExtResource("2_1ryyr")
+priority = 3
+follow_mode = 2
+tween_resource = SubResource("Resource_j03yb")
+camera_3d_resource = SubResource("Resource_bw54x")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="choose_region" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -59,14 +125,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="CanvasLayer/Control"]
+[node name="first_zone_button" type="Button" parent="CanvasLayer/choose_region"]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 258.0
 grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dm7lx")
 
-[node name="Button2" type="Button" parent="CanvasLayer/Control"]
+[node name="second_zone_button" type="Button" parent="CanvasLayer/choose_region"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -76,8 +143,9 @@ offset_left = -272.0
 offset_right = 270.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tccpn")
 
-[node name="Button3" type="Button" parent="CanvasLayer/Control"]
+[node name="third_zone_button" type="Button" parent="CanvasLayer/choose_region"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -89,8 +157,68 @@ offset_top = -324.0
 offset_bottom = 324.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ygguv")
+
+[node name="return_region" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchor_left = 0.929
+anchor_top = 0.951
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 81.792
+offset_top = 31.752
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="return_button" type="Button" parent="CanvasLayer/return_region"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -79.0
+offset_top = -27.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Retour"
+
+[node name="area_1" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.50896, 4.1, -9.97069)
+
+[node name="tableau_wall_1" type="MeshInstance3D" parent="area_1"]
+mesh = SubResource("QuadMesh_klf7a")
+skeleton = NodePath("../../point 1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="area_1"]
+visible = false
+shape = SubResource("ConvexPolygonShape3D_pg0wa")
+
+[node name="point 1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14563, 4.1, -9.97069)
+visible = false
+mesh = SubResource("SphereMesh_t5yij")
+skeleton = NodePath("../camera_wall_3")
+
+[node name="point 2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.229, 4.1, -3.055)
+visible = false
+mesh = SubResource("SphereMesh_t5yij")
+skeleton = NodePath("../camera_wall_3")
+
+[node name="point 3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.256, 4.1, 5.41)
+visible = false
+mesh = SubResource("SphereMesh_t5yij")
+skeleton = NodePath("../camera_wall_3")
 
 [node name="Node3D" parent="." instance=ExtResource("2_tsisx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.603909, 5.15603, -0.140817)
 
 [connection signal="input_event" from="StaticBody3D" to="." method="_on_static_body_3d_input_event"]
+[connection signal="pressed" from="CanvasLayer/choose_region/first_zone_button" to="." method="_on_first_zone_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/choose_region/second_zone_button" to="." method="_on_second_zone_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/choose_region/third_zone_button" to="." method="_on_third_zone_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/return_region/return_button" to="." method="_on_return_button_pressed"]
+[connection signal="input_event" from="area_1" to="." method="_on_area_1_input_event"]
