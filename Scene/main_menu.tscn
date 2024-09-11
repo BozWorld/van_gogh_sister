@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://v7ub5ok6g73r"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 113.0
+offset_bottom = 11.5
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+text = "[ nom du jeu ]"
+fit_content = true
+
+[node name="BT_Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Jouer"
+
+[node name="BT_Credit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "credit"
+
+[node name="BT_Quitter" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "quitter"
