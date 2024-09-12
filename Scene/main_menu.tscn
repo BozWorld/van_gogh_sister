@@ -20,7 +20,7 @@ grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
-text = "[ nom du jeu ]"
+text = "Johanna"
 fit_content = true
 
 [node name="BT_Play" type="Button" parent="VBoxContainer"]

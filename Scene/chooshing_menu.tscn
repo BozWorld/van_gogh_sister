@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://dfo1vtt1nuadf"]
+[gd_scene load_steps=4 format=3 uid="uid://dfo1vtt1nuadf"]
+
+[ext_resource type="Texture2D" uid="uid://c7xo77qhpm5an" path="res://ui/choisir.png" id="1_q0305"]
+[ext_resource type="Texture2D" uid="uid://cj6n42vm6af4k" path="res://ui/oui.png" id="2_5lujf"]
+[ext_resource type="Texture2D" uid="uid://cdae2obb1dxsf" path="res://ui/non.png" id="3_ldl0u"]
 
 [node name="choosing_menu" type="Control"]
 layout_mode = 3
@@ -13,30 +17,34 @@ offset_bottom = -52.488
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = -291.5
+offset_top = -142.5
+offset_right = 291.5
+offset_bottom = 169.5
+texture = ExtResource("1_q0305")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -69.0
-offset_top = -46.5
-offset_right = 69.0
-offset_bottom = 46.5
+offset_left = -151.5
+offset_top = -19.185
+offset_right = 151.5
+offset_bottom = 61.815
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+[node name="Button" type="Button" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
-text = "choisir ce tableau"
-fit_content = true
-scroll_active = false
+icon = ExtResource("2_5lujf")
+flat = true
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Button2" type="Button" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
-text = "oui"
-
-[node name="Button2" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "non"
+icon = ExtResource("3_ldl0u")
+flat = true
