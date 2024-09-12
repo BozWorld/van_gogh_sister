@@ -1,0 +1,21 @@
+[gd_scene load_steps=7 format=3 uid="uid://dj11efpc5iqcy"]
+
+[ext_resource type="PackedScene" uid="uid://dyoefdemt1rv7" path="res://structure/structure.glb" id="1_0j7kj"]
+[ext_resource type="Texture2D" uid="uid://dm3t7tj6fv7p0" path="res://texture/structure/structure_DefaultMaterial_AlbedoTransparency.png" id="2_bc764"]
+[ext_resource type="Texture2D" uid="uid://yuleqoxaueeu" path="res://texture/structure/AO.png" id="3_b07yj"]
+[ext_resource type="Texture2D" uid="uid://djesc3yech7d7" path="res://texture/structure/structure_DefaultMaterial_MetallicSmoothness.png" id="4_jhsox"]
+[ext_resource type="Texture2D" uid="uid://ddru4gkx0872d" path="res://texture/structure/structure_DefaultMaterial_Normal.png" id="5_jdwb8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vgca7"]
+albedo_texture = ExtResource("2_bc764")
+metallic = 1.0
+metallic_texture = ExtResource("4_jhsox")
+normal_enabled = true
+normal_texture = ExtResource("5_jdwb8")
+ao_enabled = true
+ao_texture = ExtResource("3_b07yj")
+
+[node name="structure2" instance=ExtResource("1_0j7kj")]
+
+[node name="structure" parent="Node" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vgca7")
