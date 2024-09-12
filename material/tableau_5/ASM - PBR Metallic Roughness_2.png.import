@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bylmay788lmej"
+path.s3tc="res://.godot/imported/ASM - PBR Metallic Roughness_2.png-d2dd455eb18e3d98d7a415302fcf7542.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "2ec2198071b6ac85eed1676199ccaf85"
+}
+
+[deps]
+
+source_file="res://material/tableau_5/ASM - PBR Metallic Roughness_2.png"
+dest_files=["res://.godot/imported/ASM - PBR Metallic Roughness_2.png-d2dd455eb18e3d98d7a415302fcf7542.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://material/tableau_5/ASM - PBR Metallic Roughness_2.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

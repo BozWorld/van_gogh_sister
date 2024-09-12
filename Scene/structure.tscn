@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dj11efpc5iqcy"]
+[gd_scene load_steps=17 format=3 uid="uid://dj11efpc5iqcy"]
 
 [ext_resource type="PackedScene" uid="uid://dvqx7ugbhost6" path="res://structure/structure_substance.glb" id="1_3jej7"]
 [ext_resource type="PackedScene" uid="uid://v7y0haxxgvwo" path="res://material/étagère/ASM - PBR Metallic Roughness.glb" id="3_2y3vx"]
@@ -11,10 +11,16 @@
 [ext_resource type="PackedScene" uid="uid://6i5fl1o0e7xs" path="res://material/chaise/ASM - PBR Metallic Roughness.glb" id="9_j24xh"]
 [ext_resource type="PackedScene" uid="uid://b5f8xyn8fjoke" path="res://material/Tableau_1/ASM - PBR Metallic Roughness.glb" id="9_nq4vj"]
 [ext_resource type="PackedScene" uid="uid://r7l8b8wdlysm" path="res://material/Tableau_2/ASM - PBR Metallic Roughness.glb" id="10_gex4s"]
+[ext_resource type="PackedScene" uid="uid://bjplllvxoyu5f" path="res://material/tableau_3/ASM - PBR Metallic Roughness.glb" id="12_dxtht"]
+[ext_resource type="PackedScene" uid="uid://b06ykp741jhqi" path="res://material/tableau_4/ASM - PBR Metallic Roughness.glb" id="13_4mkrr"]
+[ext_resource type="PackedScene" uid="uid://byntyfwfnfoyk" path="res://material/tableau_5/ASM - PBR Metallic Roughness.glb" id="14_ts6ow"]
+[ext_resource type="PackedScene" uid="uid://dnvlfrs72d83o" path="res://material/tableau_6/tableau1.glb" id="15_7h65r"]
+[ext_resource type="PackedScene" uid="uid://c4f50ek2y1axg" path="res://material/tableau_7/ASM - PBR Metallic Roughness.glb" id="16_lpscn"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="structure_substance" parent="." instance=ExtResource("1_3jej7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00253499, -0.00325829, 0.00267303)
 
 [node name="étagère" parent="." instance=ExtResource("3_2y3vx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.912412, 0, -2.17866)
@@ -45,3 +51,27 @@ transform = Transform3D(0.672716, 0.69663, -0.24932, -2.83206e-08, 0.336964, 0.9
 
 [node name="chevalet" parent="." instance=ExtResource("5_tdtg6")]
 transform = Transform3D(-0.672716, 0, 0.739901, 0, 1, 0, -0.739901, 0, -0.672716, -1.26279, -0.0135932, 2.36961)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.178093, 2.39146, 0.6665)
+light_color = Color(1, 0.719667, 0.42, 1)
+light_energy = 5.68
+light_indirect_energy = 1.906
+light_volumetric_fog_energy = 0.0
+light_size = 0.481
+omni_range = 3.202
+
+[node name="tableau_3" parent="." instance=ExtResource("12_dxtht")]
+transform = Transform3D(0.962588, 0, -0.27097, 0, 1, 0, 0.27097, 0, 0.962588, -1.23789, 0.458865, 0.0113726)
+
+[node name="tableau_4" parent="." instance=ExtResource("13_4mkrr")]
+transform = Transform3D(-0.146946, 0, -0.989144, 0, 1, 0, 0.989144, 0, -0.146946, 1.17946, 0.77906, 0.785947)
+
+[node name="tableau_6" parent="." instance=ExtResource("14_ts6ow")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.875876, 1.21387, -2.91006)
+
+[node name="tableau_5" parent="." instance=ExtResource("15_7h65r")]
+transform = Transform3D(-0.457048, -0.889353, -0.0126309, -0.889428, 0.457076, 0.000751667, 0.00510477, 0.0115778, -0.99992, 1.73347, 1.19363, -0.475077)
+
+[node name="tableau_7" parent="." instance=ExtResource("16_lpscn")]
+transform = Transform3D(1, 0, 0, 0, 0.441334, -0.897343, 0, 0.897343, 0.441334, -1.06584, 0.210789, -2.22287)
