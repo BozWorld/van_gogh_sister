@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbq6mmejvpjqq"]
+
+[ext_resource type="Texture2D" uid="uid://byh80m6svosbq" path="res://estimation-nuit-etoilee-tableau-van-gogh-850x560.jpg" id="1_6ldvc"]
+[ext_resource type="Script" path="res://Scripts/final_judgement_scene.gd" id="1_wgv21"]
+[ext_resource type="Texture2D" uid="uid://biud1pef2r2cn" path="res://icon.svg" id="2_tpfwr"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0xdld"]
+
+[node name="salle reveal" type="Node3D"]
+script = ExtResource("1_wgv21")
+testing = ExtResource("2_tpfwr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_0xdld")
+
+[node name="Sprite3D" type="Sprite3D" parent="." groups=["painting"]]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.607391, 0.578783, 0)
+texture = ExtResource("1_6ldvc")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." groups=["painting"]]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.343824, 0.578783, 0)
+texture = ExtResource("1_6ldvc")
+
+[node name="Sprite3D3" type="Sprite3D" parent="." groups=["painting"]]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0468241, 0.578783, 0)
+texture = ExtResource("1_6ldvc")
+
+[node name="Sprite3D4" type="Sprite3D" parent="." groups=["painting"]]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.2259, 0.578783, 0)
+texture = ExtResource("1_6ldvc")
+
+[node name="Sprite3D5" type="Sprite3D" parent="." groups=["painting"]]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.492313, 0.578783, 0)
+texture = ExtResource("1_6ldvc")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.664, 0.918)

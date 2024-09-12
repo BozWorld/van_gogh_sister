@@ -1,24 +1,25 @@
 extends Node3D
 
-var selected_piece: Array = []
+signal mysignal
+var selected_piece: Array[Node3D] = []
+var choosed_piece: Area3D
 @export var choose_region: Control
 @export var return_region: Control
 @export var choosing_menu: Control
 @export var camera_wall_1: PhantomCamera3D
 @export var camera_wall_2: PhantomCamera3D
 @export var camera_wall_3: PhantomCamera3D
+@export var bt_yes: Button
 var current_camera: PhantomCamera3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(delta) -> void:
+	print(choosed_piece)
+	print("coubeh")
 	pass
-
-
 func _on_static_body_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		print(shape_idx)
@@ -44,6 +45,7 @@ func _on_third_zone_button_pressed() -> void:
 	choose_region.visible = false
 	return_region.visible = true
 	current_camera = camera_wall_1
+	
 	pass # Replace with function body.
 
 
@@ -58,15 +60,10 @@ func _on_return_button_pressed() -> void:
 func _on_tableau_1_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	if event is InputEventMouseButton :
 		choosing_menu.visible = true
+		mysignal.emit()
 		return_region.visible = false
+		bt_yes.pressed.connect(choosed_piece._on_bt_yes_pressed.bind())
 	pass # Replace with function body.
-
-
-func _on_tableau_1_area_entered(area: Area3D) -> void:
-	selected_piece.append(area)
-	print(selected_piece)
-	pass # Replace with function body.
-
 
 func _on_bt_yes_pressed() -> void:
 	choosing_menu.visible = false
