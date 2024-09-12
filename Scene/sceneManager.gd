@@ -3,6 +3,7 @@ extends Node3D
 var selected_piece: Array = []
 @export var choose_region: Control
 @export var return_region: Control
+@export var choosing_menu: Control
 @export var camera_wall_1: PhantomCamera3D
 @export var camera_wall_2: PhantomCamera3D
 @export var camera_wall_3: PhantomCamera3D
@@ -54,6 +55,20 @@ func _on_return_button_pressed() -> void:
 	pass # Replace with function body.
 
 
-func _on_area_1_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	
+func _on_tableau_1_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+	if event is InputEventMouseButton :
+		choosing_menu.visible = true
+		return_region.visible = false
+	pass # Replace with function body.
+
+
+func _on_tableau_1_area_entered(area: Area3D) -> void:
+	selected_piece.append(area)
+	print(selected_piece)
+	pass # Replace with function body.
+
+
+func _on_bt_yes_pressed() -> void:
+	choosing_menu.visible = false
+	return_region.visible = true
 	pass # Replace with function body.
