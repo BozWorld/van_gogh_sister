@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cihug702uovsk"]
+[gd_scene load_steps=11 format=3 uid="uid://cihug702uovsk"]
 
 [ext_resource type="PackedScene" uid="uid://dj846yoo0p0h" path="res://mesh/boite.glb" id="1_5n6fs"]
 [ext_resource type="PackedScene" uid="uid://bleh6ffhfg83b" path="res://mesh/canapé.glb" id="2_jidpj"]
@@ -8,8 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://drcwr8eqn3xar" path="res://mesh/Table.glb" id="6_bfnr3"]
 [ext_resource type="PackedScene" uid="uid://b7j0www253das" path="res://mesh/Tabouret.glb" id="7_kyute"]
 [ext_resource type="PackedScene" uid="uid://dhyb0ttxxwjh" path="res://mesh/étagère.glb" id="8_xakod"]
+[ext_resource type="PackedScene" uid="uid://dj11efpc5iqcy" path="res://Scene/structure.tscn" id="9_uxrbf"]
+[ext_resource type="PackedScene" uid="uid://bi246wa6lsukg" path="res://material/canapé/ASM - PBR Metallic Roughness.gltf" id="10_ub1ci"]
 
 [node name="props" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.05724, 0, 0)
 
 [node name="boite" parent="." instance=ExtResource("1_5n6fs")]
 transform = Transform3D(-0.976183, 0, -0.216951, 0, 1, 0, 0.216951, 0, -0.976183, 4.86461, 0.010241, -0.386279)
@@ -33,10 +36,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20695, 0, -0.396703)
 transform = Transform3D(0.890014, 0, -0.455933, 0, 1, 0, 0.455933, 0, 0.890014, 3.54431, -0.0307167, -1.97559)
 
 [node name="étagère" parent="." instance=ExtResource("8_xakod")]
-transform = Transform3D(-0.00157084, 0, -0.999999, 0, 1, 0, 0.999999, 0, -0.00157084, 4.46172, -1.19209e-07, 0.490193)
+transform = Transform3D(-0.00157084, 0, -0.999999, 0, 1, 0, 0.999999, 0, -0.00157084, 0.62893, -1.19209e-07, 0.490193)
 
 [node name="Chaise2" parent="." instance=ExtResource("3_c6b5e")]
 transform = Transform3D(0.223709, 0, 0.974656, 0, 1, 0, -0.974656, 0, 0.223709, 2.89915, 0, -0.207464)
 
 [node name="Chevalet2" parent="." instance=ExtResource("4_2b1sj")]
 transform = Transform3D(-0.395449, 0, 0.918488, 0, 1, 0, -0.918488, 0, -0.395449, 0.0460658, 0, 0.812138)
+
+[node name="structure2" parent="." instance=ExtResource("9_uxrbf")]
+
+[node name="ASM - PBR Metallic Roughness" parent="." instance=ExtResource("10_ub1ci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0694, 1.19209e-07, 2.40865)

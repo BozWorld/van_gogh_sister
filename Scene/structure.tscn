@@ -1,21 +1,47 @@
-[gd_scene load_steps=7 format=3 uid="uid://dj11efpc5iqcy"]
+[gd_scene load_steps=12 format=3 uid="uid://dj11efpc5iqcy"]
 
-[ext_resource type="PackedScene" uid="uid://dyoefdemt1rv7" path="res://structure/structure.glb" id="1_0j7kj"]
-[ext_resource type="Texture2D" uid="uid://dm3t7tj6fv7p0" path="res://texture/structure/structure_DefaultMaterial_AlbedoTransparency.png" id="2_bc764"]
-[ext_resource type="Texture2D" uid="uid://yuleqoxaueeu" path="res://texture/structure/AO.png" id="3_b07yj"]
-[ext_resource type="Texture2D" uid="uid://djesc3yech7d7" path="res://texture/structure/structure_DefaultMaterial_MetallicSmoothness.png" id="4_jhsox"]
-[ext_resource type="Texture2D" uid="uid://ddru4gkx0872d" path="res://texture/structure/structure_DefaultMaterial_Normal.png" id="5_jdwb8"]
+[ext_resource type="PackedScene" uid="uid://dvqx7ugbhost6" path="res://structure/structure_substance.glb" id="1_3jej7"]
+[ext_resource type="PackedScene" uid="uid://v7y0haxxgvwo" path="res://material/étagère/ASM - PBR Metallic Roughness.glb" id="3_2y3vx"]
+[ext_resource type="PackedScene" uid="uid://15vs3k6qod6t" path="res://material/carton/ASM - PBR Metallic Roughness.glb" id="4_akt0h"]
+[ext_resource type="PackedScene" uid="uid://d2bty0xyry5i5" path="res://material/chevalet/ASM - PBR Metallic Roughness.glb" id="5_tdtg6"]
+[ext_resource type="PackedScene" uid="uid://b0v4qegn26wnd" path="res://material/table basse/ASM - PBR Metallic Roughness.glb" id="6_yfbkf"]
+[ext_resource type="PackedScene" uid="uid://c15i1smy1v5wa" path="res://material/tabouret/ASM - PBR Metallic Roughness.glb" id="7_dpm6b"]
+[ext_resource type="PackedScene" uid="uid://cted7poquqinw" path="res://material/table/ASM - PBR Metallic Roughness.glb" id="8_4ipnh"]
+[ext_resource type="PackedScene" uid="uid://b2n7dchssu8rh" path="res://material/canapé/ASM - PBR Metallic Roughness.glb" id="8_c4iyj"]
+[ext_resource type="PackedScene" uid="uid://6i5fl1o0e7xs" path="res://material/chaise/ASM - PBR Metallic Roughness.glb" id="9_j24xh"]
+[ext_resource type="PackedScene" uid="uid://b5f8xyn8fjoke" path="res://material/Tableau_1/ASM - PBR Metallic Roughness.glb" id="9_nq4vj"]
+[ext_resource type="PackedScene" uid="uid://r7l8b8wdlysm" path="res://material/Tableau_2/ASM - PBR Metallic Roughness.glb" id="10_gex4s"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vgca7"]
-albedo_texture = ExtResource("2_bc764")
-metallic = 1.0
-metallic_texture = ExtResource("4_jhsox")
-normal_enabled = true
-normal_texture = ExtResource("5_jdwb8")
-ao_enabled = true
-ao_texture = ExtResource("3_b07yj")
+[node name="Node3D" type="Node3D"]
 
-[node name="structure2" instance=ExtResource("1_0j7kj")]
+[node name="structure_substance" parent="." instance=ExtResource("1_3jej7")]
 
-[node name="structure" parent="Node" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_vgca7")
+[node name="étagère" parent="." instance=ExtResource("3_2y3vx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.912412, 0, -2.17866)
+
+[node name="carton" parent="." instance=ExtResource("4_akt0h")]
+transform = Transform3D(-0.321506, 0, 0.946908, 0, 1, 0, -0.946908, 0, -0.321506, 0.417018, 0.0604918, -2.38977)
+
+[node name="table_basse" parent="." instance=ExtResource("6_yfbkf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42557, 0, 1.49826)
+
+[node name="tabouret" parent="." instance=ExtResource("7_dpm6b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.727322, -1.19209e-07, 1.90318)
+
+[node name="table" parent="." instance=ExtResource("8_4ipnh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44031, 0, 0.0860666)
+
+[node name="chaise" parent="." instance=ExtResource("9_j24xh")]
+transform = Transform3D(-0.398541, 0, -0.91715, 0, 1, 0, 0.91715, 0, -0.398541, 0.998664, 0, -0.21097)
+
+[node name="canapé" parent="." instance=ExtResource("8_c4iyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31774, 0, -0.094128)
+
+[node name="tableau_1" parent="." instance=ExtResource("9_nq4vj")]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -1.85099, 1.41239, -0.0505997)
+
+[node name="tableau_2" parent="." instance=ExtResource("10_gex4s")]
+transform = Transform3D(0.672716, 0.69663, -0.24932, -2.83206e-08, 0.336964, 0.941518, 0.739901, -0.633374, 0.226681, -1.25261, 0.944327, 2.36188)
+
+[node name="chevalet" parent="." instance=ExtResource("5_tdtg6")]
+transform = Transform3D(-0.672716, 0, 0.739901, 0, 1, 0, -0.739901, 0, -0.672716, -1.26279, -0.0135932, 2.36961)
