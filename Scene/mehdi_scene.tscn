@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b7j0www253das" path="res://mesh/Tabouret.glb" id="7_kyute"]
 [ext_resource type="PackedScene" uid="uid://dhyb0ttxxwjh" path="res://mesh/étagère.glb" id="8_xakod"]
 [ext_resource type="PackedScene" uid="uid://dj11efpc5iqcy" path="res://Scene/structure.tscn" id="9_uxrbf"]
-[ext_resource type="PackedScene" uid="uid://bi246wa6lsukg" path="res://material/canapé/ASM - PBR Metallic Roughness.gltf" id="10_ub1ci"]
+[ext_resource type="PackedScene" uid="uid://chif7ewwkjwmh" path="res://material/canapé/ASM - PBR Metallic Roughness.gltf" id="10_ub1ci"]
 
 [node name="props" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.05724, 0, 0)

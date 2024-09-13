@@ -1,36 +1,79 @@
-[gd_scene format=3 uid="uid://v7ub5ok6g73r"]
+[gd_scene load_steps=8 format=3 uid="uid://v7ub5ok6g73r"]
+
+[ext_resource type="Script" path="res://Scene/main_menu.gd" id="1_2lfc7"]
+[ext_resource type="Texture2D" uid="uid://cwcshv7o8mjka" path="res://ui/titre.png" id="1_ld422"]
+[ext_resource type="Texture2D" uid="uid://by3pvdj3ofc14" path="res://ui/jouer.png" id="2_28wv0"]
+[ext_resource type="PackedScene" uid="uid://dlv7f3biqbdv" path="res://Scene/choosing-scene.tscn" id="2_tbhcf"]
+[ext_resource type="Texture2D" uid="uid://b6tj1l0wcdseh" path="res://ui/options.png" id="3_6uftq"]
+[ext_resource type="Texture2D" uid="uid://cv2njjmlakglg" path="res://ui/credits.png" id="4_g1tp8"]
+[ext_resource type="Texture2D" uid="uid://bbrfx3g0oc7mt" path="res://ui/quitter.png" id="5_poyyb"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2lfc7")
+next_scene = ExtResource("2_tbhcf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -323.0
+offset_right = 1253.0
+offset_bottom = 704.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("1_ld422")
+expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -11.5
-offset_right = 113.0
-offset_bottom = 11.5
+offset_left = -149.0
+offset_top = -122.8
+offset_right = 149.0
+offset_bottom = 277.2
+grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+[node name="bt_play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Johanna"
-fit_content = true
+size_flags_horizontal = 4
+icon = ExtResource("2_28wv0")
+flat = true
 
-[node name="BT_Play" type="Button" parent="VBoxContainer"]
+[node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Jouer"
+size_flags_horizontal = 4
+icon = ExtResource("3_6uftq")
+flat = true
 
-[node name="BT_Credit" type="Button" parent="VBoxContainer"]
+[node name="Button3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "credit"
+size_flags_horizontal = 4
+icon = ExtResource("4_g1tp8")
+flat = true
 
-[node name="BT_Quitter" type="Button" parent="VBoxContainer"]
+[node name="bt_quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "quitter"
+size_flags_horizontal = 4
+icon = ExtResource("5_poyyb")
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/bt_play" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/bt_quit" to="." method="_on_bt_quit_pressed"]

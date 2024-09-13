@@ -1,12 +1,13 @@
 extends Node3D
 
-signal emitPos(pos)
+@export var tuto_ui: Control
 @export var choose_region: Control
 @export var return_region: Control
 @export var choosing_menu: Control
 @export var camera_wall_1: PhantomCamera3D
 @export var camera_wall_2: PhantomCamera3D
 @export var camera_wall_3: PhantomCamera3D
+@export var final_camera	: PhantomCamera3D
 @export var bt_yes: Button
 @export var poss: Array[Marker3D] = []
 
@@ -15,18 +16,22 @@ var pos_exhibition: Array[Area3D] = []
 var current_pos: int = 0
 
 var current_camera: PhantomCamera3D
-	
-# func _process(delta) -> void:
-	# if stop == false:
-	# 	for i in Singleton.selected_piece.size():
-	# 		print(Singleton.selected_piece)
-	# 		print(Singleton.selected_piece[i].position)
-	# 		for x in pos_exhibition.size():
-	# 			print(pos_exhibition[x].position)
-	# 			Singleton.selected_piece[i].position = pos_exhibition[x].position
-	# 		stop = true
-	# 	return
-		# Singleton.selected_piece[i].position = pos_exhibition[i].position
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_button_pressed() -> void:
+	tuto_ui.visible = false
+	choose_region.visible = true
+	pass # Replace with function body.
+
+
 func _on_first_zone_button_pressed() -> void:
 	camera_wall_2.set_priority(20)
 	choose_region.visible = false
@@ -34,12 +39,14 @@ func _on_first_zone_button_pressed() -> void:
 	current_camera = camera_wall_2
 	pass # Replace with function body.
 
+
 func _on_second_zone_button_pressed() -> void:
 	camera_wall_1.set_priority(20)
 	choose_region.visible = false
 	return_region.visible = true
 	current_camera = camera_wall_1
 	pass # Replace with function body.
+
 
 func _on_third_zone_button_pressed() -> void:
 	camera_wall_3.set_priority(20)
@@ -57,17 +64,23 @@ func _on_return_button_pressed() -> void:
 	pass # Replace with function body.
 
 
-func _on_tableau_1_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+func _on_tableau_3_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	if event is InputEventMouseButton :
 		choosing_menu.visible = true
 		return_region.visible = false
 	pass # Replace with function body.
 
 func _on_bt_yes_pressed() -> void:
-	stop = false
 	Singleton.choosed_piece._on_bt_yes_pressed()
 	Singleton.choosed_piece.position = poss[current_pos].position
+	Singleton.choosed_piece.rotation = poss[current_pos].rotation
 	current_pos += 1
 	choosing_menu.visible = false
 	return_region.visible = true
+	if(Singleton.selected_piece.size() >= 4):
+		final_camera.set_priority(20)
+	pass # Replace with function body.
+
+
+func _on_tableau_2_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	pass # Replace with function body.

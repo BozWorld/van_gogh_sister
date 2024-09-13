@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dnvlfrs72d83o" path="res://material/tableau_6/tableau1.glb" id="15_7h65r"]
 [ext_resource type="PackedScene" uid="uid://c4f50ek2y1axg" path="res://material/tableau_7/ASM - PBR Metallic Roughness.glb" id="16_lpscn"]
 
-[node name="Node3D" type="Node3D"]
+[node name="MainStage" type="Node3D"]
 
 [node name="structure_substance" parent="." instance=ExtResource("1_3jej7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00253499, -0.00325829, 0.00267303)

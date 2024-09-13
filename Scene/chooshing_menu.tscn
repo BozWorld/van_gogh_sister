@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfo1vtt1nuadf"]
 
-[ext_resource type="Texture2D" uid="uid://c7xo77qhpm5an" path="res://ui/choisir.png" id="1_q0305"]
-[ext_resource type="Texture2D" uid="uid://cj6n42vm6af4k" path="res://ui/oui.png" id="2_5lujf"]
-[ext_resource type="Texture2D" uid="uid://cdae2obb1dxsf" path="res://ui/non.png" id="3_ldl0u"]
+[ext_resource type="Texture2D" uid="uid://jru7xheogntp" path="res://ui/choisir.png" id="1_q0305"]
+[ext_resource type="Texture2D" uid="uid://bajefo05i35lg" path="res://ui/oui.png" id="2_5lujf"]
+[ext_resource type="Texture2D" uid="uid://xhgxsly6xtu7" path="res://ui/non.png" id="3_ldl0u"]
 
 [node name="choosing_menu" type="Control"]
 layout_mode = 3
