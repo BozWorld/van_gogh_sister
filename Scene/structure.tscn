@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dj11efpc5iqcy"]
+[gd_scene load_steps=21 format=3 uid="uid://dj11efpc5iqcy"]
 
 [ext_resource type="PackedScene" uid="uid://dvqx7ugbhost6" path="res://structure/structure_substance.glb" id="1_3jej7"]
 [ext_resource type="PackedScene" uid="uid://v7y0haxxgvwo" path="res://material/étagère/ASM - PBR Metallic Roughness.glb" id="3_2y3vx"]
@@ -16,6 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://byntyfwfnfoyk" path="res://material/tableau_5/ASM - PBR Metallic Roughness.glb" id="14_ts6ow"]
 [ext_resource type="PackedScene" uid="uid://dnvlfrs72d83o" path="res://material/tableau_6/tableau1.glb" id="15_7h65r"]
 [ext_resource type="PackedScene" uid="uid://c4f50ek2y1axg" path="res://material/tableau_7/ASM - PBR Metallic Roughness.glb" id="16_lpscn"]
+[ext_resource type="PackedScene" uid="uid://5nkcnwqjrjq" path="res://material/livretdefamille/ASM - PBR Metallic Roughness.glb" id="17_tea4c"]
+[ext_resource type="PackedScene" uid="uid://bjwhoknu8uqgo" path="res://material/lettre/ASM - PBR Metallic Roughness.glb" id="18_xvqr4"]
+[ext_resource type="PackedScene" uid="uid://b2j51t0pl7e4u" path="res://material/tasse_a_café/ASM - PBR Metallic Roughness.gltf" id="19_66016"]
+[ext_resource type="PackedScene" uid="uid://dfv3wkk6v1c8a" path="res://material/gramophone/ASM - PBR Metallic Roughness.glb" id="20_4evd0"]
 
 [node name="MainStage" type="Node3D"]
 
@@ -30,6 +34,9 @@ transform = Transform3D(-0.321506, 0, 0.946908, 0, 1, 0, -0.946908, 0, -0.321506
 
 [node name="table_basse" parent="." instance=ExtResource("6_yfbkf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42557, 0, 1.49826)
+
+[node name="tabouret2" parent="." instance=ExtResource("7_dpm6b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53718, -2.38418e-07, -2.55812)
 
 [node name="tabouret" parent="." instance=ExtResource("7_dpm6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.727322, -1.19209e-07, 1.90318)
@@ -53,9 +60,9 @@ transform = Transform3D(0.672716, 0.69663, -0.24932, -2.83206e-08, 0.336964, 0.9
 transform = Transform3D(-0.672716, 0, 0.739901, 0, 1, 0, -0.739901, 0, -0.672716, -1.26279, -0.0135932, 2.36961)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.178093, 2.39146, 0.6665)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.178093, 2.39146, -0.00631809)
 light_color = Color(1, 0.719667, 0.42, 1)
-light_energy = 5.68
+light_energy = 2.661
 light_indirect_energy = 1.906
 light_volumetric_fog_energy = 0.0
 light_size = 0.481
@@ -75,3 +82,15 @@ transform = Transform3D(-0.457048, -0.889353, -0.0126309, -0.889428, 0.457076, 0
 
 [node name="tableau_7" parent="." instance=ExtResource("16_lpscn")]
 transform = Transform3D(1, 0, 0, 0, 0.441334, -0.897343, 0, 0.897343, 0.441334, -1.06584, 0.210789, -2.22287)
+
+[node name="livretfamille" parent="." instance=ExtResource("17_tea4c")]
+transform = Transform3D(1.12829, 0, -0.988408, 0, 1.5, 0, 0.988408, 0, 1.12829, 1.55322, 0.783082, 0.00433627)
+
+[node name="lettre" parent="." instance=ExtResource("18_xvqr4")]
+transform = Transform3D(-0.918305, 0, -1.18605, 0, 1.5, 0, 1.18605, 0, -0.918305, 1.21015, 0.780657, 0.182232)
+
+[node name="tasse" parent="." instance=ExtResource("19_66016")]
+transform = Transform3D(0.219195, 0, -0.334595, 0, 0.4, 0, 0.334595, 0, 0.219195, 1.35473, 0.82091, -0.366925)
+
+[node name="gramophone" parent="." instance=ExtResource("20_4evd0")]
+transform = Transform3D(-0.523093, 0, 0.293894, 0, 0.6, 0, -0.293894, 0, -0.523093, 1.53444, 0.457743, -2.5577)
