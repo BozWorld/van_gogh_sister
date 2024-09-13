@@ -19,7 +19,7 @@ var current_pos: int = 0
 var current_camera: PhantomCamera3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	number_Selection.get_child(0).text = str(current_pos) + "/5"
+	number_Selection.get_child(1).text = str(current_pos) + "/5"
 	pass # Replace with function body.
 
 
@@ -78,7 +78,7 @@ func _on_bt_yes_pressed() -> void:
 	Singleton.choosed_piece.position = poss[current_pos].position
 	Singleton.choosed_piece.rotation = poss[current_pos].rotation
 	current_pos += 1
-	number_Selection.get_child(0).text = str(str(current_pos) + "/5")
+	number_Selection.get_child(1).text = str(str(current_pos) + "/5")
 	choosing_menu.visible = false
 	return_region.visible = true
 	if(Singleton.selected_piece.size() >= 5):
