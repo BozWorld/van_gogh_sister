@@ -117,7 +117,7 @@ bt_yes = NodePath("../CanvasLayer/choosing_menu/VBoxContainer/bt_yes")
 poss = [NodePath("../go_to_pos"), NodePath("../go_to_pos2"), NodePath("../go_to_pos3")]
 
 [node name="maincamera" type="Camera3D" parent="."]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 14.305, 2.545, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.305, 2.545, 0)
 
 [node name="PhantomCameraHost" type="Node" parent="maincamera"]
 script = ExtResource("5_kb1ik")
